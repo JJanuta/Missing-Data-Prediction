@@ -30,7 +30,8 @@ plt.show()
 ### Predict Missing Prices using Linear Regression ###
 ######################################################
 
-# Impute missing 'Quantity' values with the mean
+# Impute missing values in the 'Quantity' column with the mean. 
+# This is necessary because linear regression requires complete datasets without any null values.
 imputer = SimpleImputer(strategy='mean')
 df_dirty['Quantity'] = imputer.fit_transform(df_dirty[['Quantity']])
 
